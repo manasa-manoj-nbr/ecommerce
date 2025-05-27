@@ -1,8 +1,18 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+
+// import other pages when created
+
 function App() {
   return (
-    <div className="text-white bg-black min-h-screen">
-      <h1 className="text-3xl font-bold text-center mt-10">Eclypse® Homepage</h1>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        {/* <Route path="/about" element={<About />} /> */}
+        {/* <Route path="/product/:id" element={<ProductDetails />} /> */}
+      </Routes>
+    </Router>
   );
 }
+
 export default App;
