@@ -4,6 +4,7 @@ import Banner from "../components/Banner";
 import Gallery from "../components/Gallery";
 import Testimonial from "../components/Testimonial";
 import Footer from "../components/Footer";
+import ProductCard from "../components/ProductCard";
 
 const Home: React.FC = () => {
   const [darkMode, setDarkMode] = useState(true);
@@ -13,7 +14,8 @@ const Home: React.FC = () => {
     <div className="bg-black text-white">
       <Navbar darkMode={darkMode} toggleMode={toggleMode} />
       <Banner darkMode={darkMode} />
-      <Gallery />
+          <Gallery />
+          <ProductCard/>
       <Testimonial />
       <Footer />
     </div>
