@@ -1,21 +1,20 @@
-import React, { useState } from "react";
+import React from "react";
 import Navbar from "../components/Navbar";
 import Banner from "../components/Banner";
 import Gallery from "../components/Gallery";
 import Testimonial from "../components/Testimonial";
 import Footer from "../components/Footer";
 import ProductCard from "../components/ProductCard";
+import Accordion from "../components/Accordion";
 
 const Home: React.FC = () => {
-  const [darkMode, setDarkMode] = useState(true);
-  const toggleMode = () => setDarkMode((prev) => !prev);
-
   return (
     <div className="bg-black text-white">
-      <Navbar darkMode={darkMode} toggleMode={toggleMode} />
-      <Banner darkMode={darkMode} />
-          <Gallery />
-          <ProductCard/>
+      <Navbar />
+      <Banner />
+      <Gallery />
+      <ProductCard />
+      <Accordion />
       <Testimonial />
       <Footer />
     </div>
@@ -23,5 +22,3 @@ const Home: React.FC = () => {
 };
 
 export default Home;
-
-
