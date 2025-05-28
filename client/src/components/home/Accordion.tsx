@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 const accordions = [
   { title: "Size & Fit", content: "Details about size and fit go here." },
@@ -8,11 +8,6 @@ const accordions = [
 
 const Accordion: React.FC = () => {
   const [openIdx, setOpenIdx] = useState<number | null>(null);
-useEffect(() => {
-  fetch('http://localhost:5000/api/ping')
-    .then(res => res.json())
-    .then(data => console.log(data));
-}, []);
 
   return (
     <section className="mt-28 px-16">
