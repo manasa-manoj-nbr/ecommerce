@@ -18,7 +18,7 @@ const Testimonial = () => {
 
   // Fetch testimonials from backend
   useEffect(() => {
-fetch('http://localhost:5000/api/testimonials')
+fetch('https://eclypse.up.railway.app/api/testimonials')
       .then((res) => {
         if (!res.ok) throw new Error("Failed to fetch testimonials");
         return res.json();

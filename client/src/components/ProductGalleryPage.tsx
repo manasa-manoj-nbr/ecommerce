@@ -1,4 +1,4 @@
-// components/ProductGalleryPage.tsx
+
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 interface Product {
@@ -16,9 +16,11 @@ const ProductGalleryPage: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
-  useEffect(() => {
+
+    useEffect(() => {
+      document.title = "products";
     setLoading(true);
-    fetch("http://localhost:5000/api/products")
+    fetch("https://eclypse.up.railway.app/api/products")
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);
