@@ -40,11 +40,11 @@ const Testimonial = () => {
 
   return (
     <section className="bg-black text-white">
-      <div className="py-20 px-6 md:px-16 my-8">
+      <div className="py-12 px-6 md:px-16 my-8">
         <h2 className="uppercase text-gray-300 text-lg font-medium tracking-widest my-8 mb-12">
           Our Customers
         </h2>
-        <div className="flex flex-col lg:flex-row items-start justify-around">
+        <div className="flex flex-row items-start justify-around">
           <div className="flex-1 max-w-3xl">
             <p className="text-3xl text-gray-200 md:text-5xl font-normal leading-snug mb-6">
               <span className="mr-2">

@@ -4,8 +4,8 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-black py-16 text-gray-300 px-8 relative">
-      <div className=" mx-8 flex flex-col lg:flex-row items-start gap-8">
+    <footer className="relative bg-black py-8 text-gray-300 px-8 ">
+      <div className=" mx-8 flex flex-row items-end gap-8 ">
         {/* Left Section */}
         <div className="flex flex-col gap-4">
           <h1 className="text-3xl font-bold mb-8">
@@ -36,7 +36,7 @@ const Footer = () => {
 
       <button
         onClick={scrollToTop}
-        className="absolute top-32 right-16 text-3xl bg-white text-black rounded-full w-12 h-12 flex items-center justify-center shadow-md hover:scale-105 transition"
+        className="absolute top-20 sm:top-28 right-12 text-3xl bg-white text-black rounded-full w-12 h-12 flex items-center justify-center shadow-md hover:scale-105 transition"
         aria-label="Scroll to Top"
       >
         ↑

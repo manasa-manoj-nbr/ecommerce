@@ -20,7 +20,8 @@ const Banner: React.FC = () => {
         <video
           ref={videoRef}
           className="w-full h-full object-cover z-0 brightness-75"
-          src="/images/banner1.mp4"
+                  src="/images/banner1.mp4"
+                  loop
           autoPlay
           muted
           playsInline
@@ -30,12 +31,12 @@ const Banner: React.FC = () => {
         </span>
       </div>
 
-      <section className="mt-44 px-8 max-w-[1000px]">
-        <p className="text-5xl font-normal mb-6 leading-snug text-white">
+      <section className="md:mt-44 mt-32 px-8 md:max-w-[1000px] max-w-[500px]">
+        <p className="md:text-5xl text-2xl font-normal mb-6 leading-snug text-white">
           Rooted in a philosophy of quiet luxury, our garments are designed to
           speak softly in cut, in movement, in presence.
         </p>
-        <button className="group text-white py-2 mt-24 text-3xl font-normal hover:text-black hover:bg-slate-50 transition duration-500">
+        <button className="group text-white py-2 md:mt-24 mt-8 md:text-3xl text-2xl font-normal hover:text-black hover:bg-slate-50 transition duration-500">
           <span className="inline-block border-b pb-2 border-white transform transition-transform duration-500 group-hover:translate-x-3">
             Learn more about Eclypse
           </span>

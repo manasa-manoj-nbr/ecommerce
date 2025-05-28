@@ -32,7 +32,7 @@ const Navbar: React.FC = () => {
           Cart
         </a>
         <button
-          className="text-lg font-medium sm:w-[100px] px-2 py-3 rounded transition-colors duration-200 text-black bg-white hover:bg-white/95"
+          className="text-lg font-medium w-[100px] px-2 py-3 rounded transition-colors duration-200 text-black bg-white hover:bg-white/95"
         >
           <a href="#buy">Buy</a>
         </button>

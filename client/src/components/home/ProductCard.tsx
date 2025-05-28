@@ -12,9 +12,9 @@ const ProductCard: React.FC = () => {
         </h2>
       </div>
       <div className="flex flex-col bg-slate-50 text-black lg:flex-row w-full gap-6">
-        <div className="w-full h-[1000px] lg:flex-1/2 lg:w-1/2">
+        <div className="w-full h-[500px] md:h-[1000px] lg:flex-1/2 lg:w-1/2">
           <video
-            className="w-full h-full object-cover"
+            className="w-full h-full  object-cover"
             src="/videos/product0.mp4"
             autoPlay
             loop
@@ -81,14 +81,15 @@ const ProductCard: React.FC = () => {
               ))}
             </div>
           </div>
-          <hr className="my-8 mx-4 h-0.5 bg-slate-300" />
+          <hr className="my-4 mx-4 h-0.5 bg-slate-300" />
           {/* Action Buttons */}
-          <div className="flex gap-4 mt-6 mx-4 text-2xl font-medium">
-            <button className="flex-1/4 w-1/4 py-5 border border-black text-black hover:bg-black hover:text-white transition rounded-md">
+          <div className="flex gap-4 my-8 mx-4 text-2xl font-medium">
+            <button className="flex-1/4 w-1/2 lg:w-1/4 py-5 border border-black text-black hover:bg-gray-600/70 hover:text-white transition duration-500 rounded-md">
               Add to Cart
             </button>
-            <button className="flex-3/4 w-3/4 py-5 mr-8  bg-black text-white hover:bg-red-600 transition rounded-md">
-              Buy
+                      <button className="flex-3/4 w-1/2 lg:w-3/4 py-5 mr-8  bg-black text-white hover:bg-red-600 transition duration-500 rounded-md">
+                          <a href="/checkout">Buy</a>
+              
             </button>
           </div>
         </div>
