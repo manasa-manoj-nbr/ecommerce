@@ -1,0 +1,10 @@
+[
+  {
+    "id": 1,
+    "name": "Silhouette No. 1 – Vermilion",
+    "price": 7999,
+    "description": "A blend of comfortable & curated...",
+    "sizes": ["XS", "S", "M", "L", "XL"],
+    "image": "/images/product.jpg"
+  }
+]

@@ -14,7 +14,7 @@ const Footer = () => {
 
           <div className="flex flex-wrap max-w-[200px] tracking-wider text-base gap-2 text-gray-200">
             <a href="/" className="hover:text-white transition">Home</a> /
-            <a href="/about" className="hover:text-white transition">About</a> /
+            <a href="/aboutus" className="hover:text-white transition">About</a> /
             <a href="/products" className="hover:text-white transition">Buy</a> /
             <a href="/customers" className="hover:text-white transition">Our Customers</a> /
             <a href="/contacts" className="hover:text-white transition">Contacts</a>

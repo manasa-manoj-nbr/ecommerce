@@ -1,5 +1,3 @@
-// components/CheckoutPage.tsx
-import React from "react";
 
 const CheckoutPage = () => {
   return (

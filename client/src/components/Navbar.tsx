@@ -14,7 +14,7 @@ const Navbar: React.FC = () => {
       {/* Right: Nav Links */}
       <div className="flex items-center space-x-10">
         <a
-          href="#about"
+          href="/aboutus"
           className="text-lg font-medium text-white hover:text-white/90"
         >
           About Us
