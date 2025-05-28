@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-
+import { useNavigate } from "react-router-dom";
 const sizes = ["XS", "S", "M", "L", "XL"];
 const ProductCard: React.FC = () => {
-  const [selectedSize, setSelectedSize] = useState<string | null>(null);
-
+    const [selectedSize, setSelectedSize] = useState<string | null>(null);
+    const navigate = useNavigate();
   return (
     <section>
       <div className="my-28 mx-12">
@@ -87,8 +87,8 @@ const ProductCard: React.FC = () => {
             <button className="flex-1/4 w-1/2 lg:w-1/4 py-5 border border-black text-black hover:bg-gray-600/70 hover:text-white transition duration-500 rounded-md">
               Add to Cart
             </button>
-                      <button className="flex-3/4 w-1/2 lg:w-3/4 py-5 mr-8  bg-black text-white hover:bg-red-600 transition duration-500 rounded-md">
-                          <a href="/checkout">Buy</a>
+                      <button className="flex-3/4 w-1/2 lg:w-3/4 py-5 mr-8  bg-black text-white hover:bg-red-600 transition duration-500 rounded-md" onClick={() => navigate("/checkout")}>
+                          Buy
               
             </button>
           </div>

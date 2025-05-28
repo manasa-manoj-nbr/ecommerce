@@ -3,8 +3,159 @@
     "id": 1,
     "name": "Silhouette No. 1 – Vermilion",
     "price": 7999,
-    "description": "A blend of comfortable & curated...",
+    "image": "/images/product1.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Form No. 2 –  Obsidian Bloom",
+    "price": 8499,
+    "image": "/images/productt2.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Drape No. 3 – Sapphire Veil",
+    "price": 7599,
     "sizes": ["XS", "S", "M", "L", "XL"],
-    "image": "/images/product.jpg"
+    "image": "/images/productt3.jpeg"
+  },
+  {
+    "id": 4,
+    "name": "Line No. 4 – Rose Gold Eclipse",
+    "price": 8999,
+    "sizes": ["XS", "S", "M", "L", "XL"],
+    "image": "/images/product4.jpeg"
+  },
+  {
+    "id": 5,
+    "name": "Profile No. 5 – Ivory Flame",
+    "price": 8299,
+    "sizes": ["XS", "S", "M", "L", "XL"],
+    "image": "/images/product5.jpeg"
+  },
+  {
+    "id": 6,
+    "name": "Shape No. 6 – Amethyst Whisper",
+    "price": 7799,
+    "sizes": ["XS", "S", "M", "L", "XL"],
+    "image": "/images/product6.jpeg"
+  },
+  {
+    "id": 7,
+    "name": "Sketch No. 7 – Jade Curve",
+    "price": 7399,
+    "sizes": ["XS", "S", "M", "L", "XL"],
+    "image": "/images/product7.jpeg"
+  },
+  {
+    "id": 8,
+    "name": "Silhouette No. 8 – Crimson Light",
+    "price": 8199,
+    "sizes": ["XS", "S", "M", "L", "XL"],
+    "image": "/images/product8.jpeg"
+  },
+  {
+    "id": 9,
+    "name": "Draft No. 9 – Azure Wind",
+    "price": 6999,
+    "sizes": ["XS", "S", "M", "L", "XL"],
+    "image": "/images/product9.jpeg"
+  },
+  {
+    "id": 10,
+    "name": "Form No. 10 – Dusty Blush",
+    "price": 7799,
+    "sizes": ["XS", "S", "M", "L", "XL"],
+    "image": "/images/product10.jpeg"
+  },
+  {
+    "id": 11,
+    "name": "Sketch No. 11 – Cloud Beige",
+    "price": 7299,
+    "sizes": ["XS", "S", "M", "L", "XL"],
+    "image": "/images/product11.jpeg"
+  },
+  {
+    "id": 12,
+    "name": "Silhouette No. 12 – Plum Dusk",
+    "price": 8899,
+    "sizes": ["XS", "S", "M", "L", "XL"],
+    "image": "/images/product12.jpeg"
+  },
+  {
+    "id": 13,
+    "name": "Frame No. 13 – Pewter Mist",
+    "price": 7999,
+    "sizes": ["XS", "S", "M", "L", "XL"],
+    "image": "/images/product13.jpeg"
+  },
+  {
+    "id": 14,
+    "name": "Drape No. 14 – Coral Whisper",
+    "price": 6899,
+    "sizes": ["XS", "S", "M", "L", "XL"],
+    "image": "/images/product14.jpeg"
+  },
+  {
+    "id": 15,
+    "name": "Form No. 15 – Golden Hour",
+    "price": 8499,
+    "sizes": ["XS", "S", "M", "L", "XL"],
+    "image": "/images/product15.jpeg"
+  },
+  {
+    "id": 16,
+    "name": "Silhouette No. 16 – Lavender Ash",
+    "price": 7599,
+    "sizes": ["XS", "S", "M", "L", "XL"],
+    "image": "/images/product16.jpeg"
+  },
+  {
+    "id": 17,
+    "name": "Draft No. 17 – Emerald Fade",
+    "price": 7899,
+    "sizes": ["XS", "S", "M", "L", "XL"],
+    "image": "/images/product17.jpeg"
+  },
+  {
+    "id": 18,
+    "name": "Frame No. 18 – Night Teal",
+    "price": 8199,
+    "sizes": ["XS", "S", "M", "L", "XL"],
+    "image": "/images/product18.jpeg"
+  },
+  {
+    "id": 19,
+    "name": "Form No. 19 – Champagne Drift",
+    "price": 8699,
+    "sizes": ["XS", "S", "M", "L", "XL"],
+    "image": "/images/product19.jpeg"
+  },
+  {
+    "id": 20,
+    "name": "Silhouette No. 20 – Moonlit Rust",
+    "price": 9099,
+    "sizes": ["XS", "S", "M", "L", "XL"],
+    "image": "/images/product20.jpeg"
+  },
+  {
+    "id": 21,
+    "name": "Sketch No. 21 – Blush Mirage",
+    "price": 7199,
+    "sizes": ["XS", "S", "M", "L", "XL"],
+    "image": "/images/product21.jpeg"
+  },
+  {
+    "id": 22,
+    "name": "Line No. 22 – Ice Orchid",
+    "price": 7799,
+    "sizes": ["XS", "S", "M", "L", "XL"],
+    "image": "/images/product22.jpeg"
+  },
+  {
+    "id": 23,
+    "name": "Shape No. 23 – Sandstone Flow",
+    "price": 7499,
+    "sizes": ["XS", "S", "M", "L", "XL"],
+    "image": "/images/product23.jpeg"
   }
 ]

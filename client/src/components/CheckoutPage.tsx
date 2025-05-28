@@ -1,12 +1,21 @@
-
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 const CheckoutPage = () => {
+  const navigate = useNavigate();
+  useEffect(() => {
+    document.title = "Checkout";
+  }, []);
   return (
     <section className="bg-black min-h-screen">
       <main className="w-full px-2 pt-32">
         <div className="mt-12 mb-8 mx-24">
-          <a href="/">
-            <span className="text-4xl mx-4 p-1 hover:bg-white/10"> &larr;</span>
-          </a>
+          <span
+            onClick={() => navigate("/")}
+            className="text-4xl mx-4 p-1 hover:bg-white/10 cursor-pointer"
+          >
+            {" "}
+            &larr;
+          </span>
           <span className="text-3xl font-medium">Shipping Address</span>
         </div>
         <div className="flex flex-col gap-8 lg:flex-row lg:gap-12 mx-16 lg:mx-24">
@@ -96,7 +105,7 @@ const OrderSummary = () => (
       </a>
       .
     </p>
-    <hr className="border-gray-400"/>
+    <hr className="border-gray-400" />
     <div className="text-gray-500">
       <h2 className="font-semibold text-xl mb-4 text-black">Order Summary</h2>
       <div className="flex justify-between text-lg mb-1">
@@ -116,7 +125,7 @@ const OrderSummary = () => (
         <span>1,400</span>
       </div>
     </div>
-    <hr className="border-gray-400"/>
+    <hr className="border-gray-400" />
     <div className="flex justify-between items-center font-medium text-2xl text-black">
       <span>Order Total:</span>
       <span>8,199</span>
