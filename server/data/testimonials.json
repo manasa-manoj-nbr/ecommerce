@@ -3,7 +3,21 @@
     "id": 1,
     "name": "Random Woman",
     "location": "NY, USA",
-    "text": "Understated, but unforgettable. It feels like it was made for me",
-    "avatar": "/images/customer1.jpg"
+    "quote": "Understated, but unforgettable. It feels like it was made for me",
+    "image": "/images/customer1.jpg"
+  },
+  {
+    "id": 2,
+    "name": "John Doe",
+    "location": "CA, USA",
+    "quote": "Absolutely loved it. Elegance in every detail.",
+    "image": "/images/customer2.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Anime Girl",
+    "location": "Tokyo, Japan",
+    "quote": "Stylish and simple. I feel confident wearing it.",
+    "image": "/images/customer3.jpg"
   }
 ]
