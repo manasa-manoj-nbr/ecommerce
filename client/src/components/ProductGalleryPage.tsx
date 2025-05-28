@@ -1,6 +1,9 @@
-
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+
+/**
+ * Product type definition.
+ */
 interface Product {
   id: number;
   name: string;
@@ -10,17 +13,21 @@ interface Product {
 
 const PRODUCTS_PER_PAGE = 15;
 
+/**
+ * ProductGalleryPage Component
+ * Displays a paginated gallery of products.
+ */
 const ProductGalleryPage: React.FC = () => {
   const [products, setProducts] = useState<Product[]>([]);
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
-
-    useEffect(() => {
-      document.title = "products";
+  // Fetch products from backend API on mount
+  useEffect(() => {
+    document.title = "Products";
     setLoading(true);
-    fetch("https://eclypse.up.railway.app/api/products")
+    fetch("https://eclypsee.up.railway.app/api/products")
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);
@@ -38,10 +45,17 @@ const ProductGalleryPage: React.FC = () => {
   return (
     <section className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-gray-800 flex flex-col items-center justify-start">
       <main className="w-full max-w-6xl px-2 pt-32 mb-8">
+        {/* Back Arrow and Heading */}
         <div className="mt-12 mb-8 flex items-center space-x-6 animate-fadeIn">
           <span
             onClick={() => navigate("/")}
             className="text-4xl mx-2 p-2 cursor-pointer rounded-full bg-white/10 hover:bg-red-600/80 hover:text-white transition duration-300 shadow-lg hover:scale-110 inline-block"
+            role="button"
+            tabIndex={0}
+            aria-label="Go back to home"
+            onKeyDown={(e) => {
+              if (e.key === "Enter" || e.key === " ") navigate("/");
+            }}
           >
             &larr;
           </span>
@@ -49,6 +63,7 @@ const ProductGalleryPage: React.FC = () => {
             Product Gallery
           </span>
         </div>
+        {/* Gallery Card */}
         <div className="mx-2 lg:mx-0 bg-white/10 backdrop-blur-xl text-white rounded-2xl p-8 shadow-2xl border border-white/20 animate-fadeIn delay-200">
           {loading ? (
             <div className="text-center text-lg text-gray-300 py-12">
@@ -69,7 +84,7 @@ const ProductGalleryPage: React.FC = () => {
                     <img
                       src={product.image}
                       alt={product.name}
-                      className="w-full h-48  object-cover rounded-lg mb-4"
+                      className="w-full h-48 object-cover rounded-lg mb-4"
                     />
                     <h3 className="text-lg font-semibold mb-2 text-white">
                       {product.name}
@@ -90,6 +105,7 @@ const ProductGalleryPage: React.FC = () => {
                       ? "bg-gray-700 text-gray-400 cursor-not-allowed"
                       : "bg-red-600 text-white hover:bg-red-700"
                   }`}
+                  aria-label="Previous page"
                 >
                   Previous
                 </button>
@@ -104,6 +120,7 @@ const ProductGalleryPage: React.FC = () => {
                       ? "bg-gray-700 text-gray-400 cursor-not-allowed"
                       : "bg-red-600 text-white hover:bg-red-700"
                   }`}
+                  aria-label="Next page"
                 >
                   Next
                 </button>

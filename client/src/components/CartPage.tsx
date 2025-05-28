@@ -1,7 +1,18 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-const cartItems = [
+/*Cart item type definition*/
+type CartItem = {
+  id: number;
+  name: string;
+  price: number;
+  image: string;
+  size: string;
+  quantity: number;
+};
+
+/**Dummy cart items array.*/
+const cartItems: CartItem[] = [
   {
     id: 1,
     name: "Silhouette No. 1 – Vermilion",
@@ -21,25 +32,49 @@ const cartItems = [
   // Add more items as needed
 ];
 
-const CartPage = () => {
+/**
+ * CartPage Component
+ * Displays the user's cart with product details, total, and checkout button.
+ */
+const CartPage: React.FC = () => {
   const navigate = useNavigate();
+
+  // Set the document title on mount
   useEffect(() => {
     document.title = "Cart";
   }, []);
 
+  // Calculate total price
   const total = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
+
+  // Handler for proceeding to checkout
+  const handleCheckout = () => {
+    // Add validation or cart logic as needed
+    navigate("/checkout");
+  };
 
   return (
     <section className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-gray-800 flex flex-col items-center justify-start">
       <main className="w-full max-w-3xl px-2 pt-32">
+        {/* Back arrow and heading */}
         <div className="mt-12 mb-8 flex items-center space-x-6 animate-fadeIn">
-            <span onClick={() => navigate("/")} className="text-4xl mx-2 p-2 rounded-full bg-white/10 hover:bg-red-600/80 hover:text-white transition duration-300 shadow-lg cursor-pointer hover:scale-110 inline-block">
-              &larr;
-            </span>
+          <span
+            onClick={() => navigate("/")}
+            className="text-4xl mx-2 p-2 rounded-full bg-white/10 hover:bg-red-600/80 hover:text-white transition duration-300 shadow-lg cursor-pointer hover:scale-110 inline-block"
+            role="button"
+            tabIndex={0}
+            aria-label="Go back to home"
+            onKeyDown={(e) => {
+              if (e.key === "Enter" || e.key === " ") navigate("/");
+            }}
+          >
+            &larr;
+          </span>
           <span className="text-3xl font-semibold text-white relative after:content-[''] after:block after:w-24 after:h-1 after:bg-red-500 after:rounded-full after:mt-1 after:animate-underline">
             Your Cart
           </span>
         </div>
+        {/* Cart Items Card */}
         <div className="mx-2 lg:mx-0 bg-white/10 backdrop-blur-xl text-white rounded-2xl p-10 shadow-2xl border border-white/20 animate-fadeIn delay-200 my-4">
           {cartItems.length === 0 ? (
             <p className="text-gray-300 text-lg">Your cart is empty.</p>
@@ -48,13 +83,19 @@ const CartPage = () => {
               <ul className="divide-y divide-gray-700">
                 {cartItems.map(item => (
                   <li key={item.id} className="flex items-center py-6 gap-6">
-                    <img src={item.image} alt={item.name} className="w-32 h-32 object-cover rounded-xl border-2 border-red-500" />
+                    <img
+                      src={item.image}
+                      alt={item.name}
+                      className="w-32 h-32 object-cover rounded-xl border-2 border-red-500"
+                    />
                     <div className="flex-1">
                       <h3 className="text-xl font-semibold">{item.name}</h3>
                       <p className="text-gray-400 text-sm">Size: {item.size}</p>
                       <p className="text-gray-400 text-sm">Qty: {item.quantity}</p>
                     </div>
-                    <div className="text-lg font-semibold text-red-400">₹{item.price}</div>
+                    <div className="text-lg font-semibold text-red-400">
+                      ₹{item.price}
+                    </div>
                   </li>
                 ))}
               </ul>
@@ -62,7 +103,10 @@ const CartPage = () => {
                 <span className="text-lg font-semibold">Total:</span>
                 <span className="text-2xl font-bold text-red-500">₹{total}</span>
               </div>
-              <button className="mt-6 bg-red-600 hover:bg-red-700 transition text-white font-semibold px-8 py-3 rounded-lg shadow-lg w-full">
+              <button
+                className="mt-6 bg-red-600 hover:bg-red-700 transition text-white font-semibold px-8 py-3 rounded-lg shadow-lg w-full"
+                onClick={handleCheckout}
+              >
                 Proceed to Checkout
               </button>
             </>

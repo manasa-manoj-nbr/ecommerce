@@ -1,6 +1,13 @@
 import React from "react";
 
-const galleryItems1 = [
+/** Gallery item type definition.*/
+type GalleryItem = {
+  type: "image" | "video";
+  src: string;
+  hoverImage: string;
+};
+/*Desktop gallery items.*/
+const galleryItems1: GalleryItem[] = [
   {
     type: "video",
     src: "/videos/prop0.mp4",
@@ -13,7 +20,7 @@ const galleryItems1 = [
   },
 ];
 
-const galleryItems2 = [
+const galleryItems2: GalleryItem[] = [
   {
     type: "image",
     src: "/images/prop2.jpg",
@@ -31,9 +38,14 @@ const galleryItems2 = [
   },
 ];
 
+/**
+ * Gallery Component
+ * - Responsive: grid on desktop, stacked on mobile/tablet.
+ * - Hover effect: transition to hoverImage on hover.
+ */
 const Gallery: React.FC = () => {
-  // For mobile/tablet, move galleryItems1[1] to the start of galleryItems2 and hide the last image
-  const mobileGallery = [
+  // For mobile/tablet: move galleryItems1[1] to the start of galleryItems2 and hide the last image
+  const mobileGallery: GalleryItem[] = [
     galleryItems1[0], // video
     galleryItems1[1], // tall image
     ...galleryItems2.slice(0, 2), // first two images only
@@ -44,6 +56,7 @@ const Gallery: React.FC = () => {
       <div className="w-full max-w-7xl">
         {/* Desktop/Large screens */}
         <div className="hidden md:grid grid-cols-3 gap-8 mb-8 px-2" style={{ height: 450 }}>
+          {/* Main video (spans 2 columns) */}
           <div className="col-span-2 row-span-2 relative group overflow-hidden rounded-md h-full">
             <video
               className="w-full h-full object-cover transition-all duration-600"
@@ -52,6 +65,7 @@ const Gallery: React.FC = () => {
               loop
               muted
               playsInline
+              aria-label="Gallery main video"
             />
             <img
               src={galleryItems1[0].hoverImage}
@@ -59,6 +73,7 @@ const Gallery: React.FC = () => {
               className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-600"
             />
           </div>
+          {/* Tall right image */}
           <div className="col-span-1 row-span-2 relative group overflow-hidden rounded-md h-full">
             <img
               src={galleryItems1[1].src}
@@ -81,7 +96,7 @@ const Gallery: React.FC = () => {
             >
               <img
                 src={item.src}
-                alt=""
+                alt= ""
                 className="w-full h-full object-cover transition-all duration-500"
               />
               <img
@@ -98,7 +113,7 @@ const Gallery: React.FC = () => {
           {mobileGallery.map((item, idx) => (
             <div
               key={idx}
-              className="relative group overflow-hidden rounded-md w-full aspect-[4/3] max-h-[400px] justify-center items-center flex"
+              className="relative group overflow-hidden rounded-md w-full aspect-[4/3] max-h-[400px] flex justify-center items-center"
             >
               {item.type === "video" ? (
                 <video
@@ -108,6 +123,7 @@ const Gallery: React.FC = () => {
                   loop
                   muted
                   playsInline
+                  aria-label={`Gallery video ${idx + 1}`}
                 />
               ) : (
                 <img
@@ -119,7 +135,7 @@ const Gallery: React.FC = () => {
               <img
                 src={item.hoverImage}
                 alt=""
-                className="absolute  w-full rounded-md h-full object-bottom opacity-0 rotate-3 group-hover:opacity-100 group-hover:rotate-0 transition-all duration-700 ease-in-out"
+                className="absolute w-full h-full rounded-md object-bottom opacity-0 rotate-3 group-hover:opacity-100 group-hover:rotate-0 transition-all duration-700 ease-in-out"
               />
             </div>
           ))}

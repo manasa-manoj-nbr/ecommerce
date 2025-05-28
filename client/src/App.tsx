@@ -1,10 +1,10 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './pages/Home';
-import Checkout from './pages/Checkout';
-import About from './pages/About';
-import Waitlist from './pages/Waitlist';
-import Cart from './pages/Cart';
-import Product from './pages/Product';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import Checkout from "./pages/Checkout";
+import About from "./pages/About";
+import Waitlist from "./pages/Waitlist";
+import Cart from "./pages/Cart";
+import Product from "./pages/Product";
 function App() {
   return (
     <Router>

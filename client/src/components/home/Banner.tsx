@@ -1,11 +1,18 @@
-import React, { useRef } from "react";
+import React, { useRef , useEffect} from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 
+/*Banner Component:Displays the hero section with a background video, brand title, tagline, and a call-to-action button.*/
 const Banner: React.FC = () => {
+      useEffect(() => {
+        document.title = "Home";
+      }, []);
+  // Reference to the video element (for future enhancements)
   const videoRef = useRef<HTMLVideoElement>(null);
+
   return (
     <section className="relative w-full pt-32 bg-black">
+      {/* Header: Brand Title and Year */}
       <div className="z-10 mb-12 px-6 flex justify-between items-end">
         <div>
           <h1 className="md:text-9xl text-8xl font-normal text-white">
@@ -16,27 +23,33 @@ const Banner: React.FC = () => {
         <div className="text-xl font-normal text-white">&copy; 2025</div>
       </div>
 
+      {/* Video Banner with Overlayed Tagline */}
       <div className="h-[400px] md:h-[600px] relative">
         <video
           ref={videoRef}
           className="w-full h-full object-cover z-0 brightness-75"
-                  src="/images/banner1.mp4"
-                  loop
+          src="/images/banner1.mp4"
           autoPlay
+          loop
           muted
           playsInline
+          aria-label="Brand video banner"
         />
         <span className="absolute bottom-8 right-8 z-10 text-3xl md:text-4xl font-normal text-white bg-black bg-opacity-40 px-4 py-2 rounded">
           A silhouette worth remembering
         </span>
       </div>
 
+      {/* Brand Philosophy and Call-to-Action */}
       <section className="md:mt-44 mt-32 px-8 md:max-w-[1000px] max-w-[500px]">
         <p className="md:text-5xl text-2xl font-normal mb-6 leading-snug text-white">
           Rooted in a philosophy of quiet luxury, our garments are designed to
           speak softly in cut, in movement, in presence.
         </p>
-        <button className="group text-white py-2 md:mt-24 mt-8 md:text-3xl text-2xl font-normal hover:text-black hover:bg-slate-50 transition duration-500">
+        <button
+          className="group text-white py-2 md:mt-24 mt-8 md:text-3xl text-2xl font-normal hover:text-black hover:bg-slate-50 transition duration-500"
+          aria-label="Learn more about Eclypse"
+        >
           <span className="inline-block border-b pb-2 border-white transform transition-transform duration-500 group-hover:translate-x-3">
             Learn more about Eclypse
           </span>

@@ -1,7 +1,11 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-const AboutPage = () => {
+
+/*AboutPage Component: Displays the About Us information with brand story, features, and contact.*/
+const AboutPage: React.FC = () => {
   const navigate = useNavigate();
+
+  // Set the document title on mount
   useEffect(() => {
     document.title = "About Us";
   }, []);
@@ -9,10 +13,17 @@ const AboutPage = () => {
   return (
     <section className="min-h-screen bg-black flex flex-col items-center justify-start">
       <main className="w-full max-w-3xl px-2 pt-32">
+        {/* Back Arrow and Heading */}
         <div className="mt-12 mb-8 flex items-center space-x-6 animate-fadeIn">
           <span
             onClick={() => navigate("/")}
             className="text-4xl mx-2 p-2 rounded-full bg-white/10 hover:bg-red-600/80 cursor-pointer hover:text-white transition duration-300 shadow-lg hover:scale-110 inline-block"
+            role="button"
+            tabIndex={0}
+            aria-label="Go back to home"
+            onKeyDown={(e) => {
+              if (e.key === "Enter" || e.key === " ") navigate("/");
+            }}
           >
             &larr;
           </span>
@@ -20,10 +31,10 @@ const AboutPage = () => {
             About Us
           </span>
         </div>
+
+        {/* Main Card */}
         <div className="mx-2 lg:mx-0 bg-white/10 backdrop-blur-xl text-white rounded-2xl p-10 shadow-2xl space-y-8 border border-white/20 animate-fadeIn delay-200">
-          <h2 className="text-4xl font-bold text-white drop-shadow">
-            Our Story
-          </h2>
+          <h2 className="text-4xl font-bold text-white drop-shadow">Our Story</h2>
           <p className="text-lg leading-relaxed text-gray-200">
             At <strong className="text-red-400">Eclypse</strong>, we believe art
             and design are not just about aesthetics — they’re about expressing
@@ -32,18 +43,14 @@ const AboutPage = () => {
             experience online shopping.
           </p>
 
-          <h2 className="text-2xl font-semibold text-gray-100 mt-6">
-            What We Do
-          </h2>
+          <h2 className="text-2xl font-semibold text-gray-100 mt-6">What We Do</h2>
           <p className="text-lg leading-relaxed text-gray-300">
             We curate unique, high-quality art pieces and handmade goods. Every
             product tells a story and supports independent artists and local
             businesses.
           </p>
 
-          <h2 className="text-2xl font-semibold text-gray-100 mt-6">
-            Why Choose Us?
-          </h2>
+          <h2 className="text-2xl font-semibold text-gray-100 mt-6">Why Choose Us?</h2>
           <ul className="list-disc list-inside text-lg space-y-2 pl-4">
             <li className="transition-transform hover:scale-105 hover:text-red-400">
               Premium handcrafted products
@@ -59,9 +66,7 @@ const AboutPage = () => {
             </li>
           </ul>
 
-          <h2 className="text-2xl font-semibold text-gray-100 mt-6">
-            Connect With Us
-          </h2>
+          <h2 className="text-2xl font-semibold text-gray-100 mt-6">Connect With Us</h2>
           <p className="text-lg leading-relaxed text-gray-200">
             Got questions or feedback? Reach out at{" "}
             <a
@@ -73,6 +78,7 @@ const AboutPage = () => {
           </p>
         </div>
       </main>
+      {/* Animations */}
       <style>
         {`
           @keyframes fadeIn {
